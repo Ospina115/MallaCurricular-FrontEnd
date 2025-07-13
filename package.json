@@ -1,0 +1,52 @@
+{
+  "name": "malla-curricular-medicina-udelar",
+  "version": "1.0.0",
+  "description": "Aplicación web interactiva para visualizar y rastrear el progreso académico en la carrera de Medicina de la Universidad de la República (UDELAR), Uruguay",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for vanilla JS project'",
+    "lint": "echo 'Consider adding ESLint for code quality'",
+    "test": "echo 'Consider adding tests with Jest or similar'"
+  },
+  "keywords": [
+    "medicina",
+    "udelar",
+    "malla-curricular",
+    "uruguay",
+    "educacion",
+    "universidad",
+    "progreso-academico",
+    "estudiantes"
+  ],
+  "author": {
+    "name": "Medicina UDELAR",
+    "email": "contacto@fmed.edu.uy",
+    "url": "https://www.fmed.edu.uy/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PriscillaNoble24/Malla-Fmed-Interactiva.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PriscillaNoble24/Malla-Fmed-Interactiva/issues"
+  },
+  "homepage": "https://github.com/PriscillaNoble24/Malla-Fmed-Interactiva#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "config": {
+    "port": 8000
+  }
+}

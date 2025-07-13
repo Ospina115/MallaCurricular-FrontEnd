@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: purple;
+  margin-top: 20px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.year {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  border-radius: 10px;
+}
+
+h2 {
+  color: purple;
+}
+
+.semester {
+  margin: 10px;
+  border: 2px solid #c19ff0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.pink {
+  background-color: #ffe4f1;
+}
+
+.purple {
+  background-color: #f3d9ff;
+}
+
+button {
+  display: block;
+  margin: 8px auto;
+  padding: 10px;
+  width: 90%;
+  background-color: white;
+  border: none;
+  border-left: 5px solid purple;
+  border-radius: 10px;
+  font-weight: bold;
+  color: purple;
+}
+
+button.disabled {
+  background-color: lightgray;
+  color: gray;
+  text-decoration: line-through;
+}

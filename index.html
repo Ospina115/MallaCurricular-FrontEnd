@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular - Derecho UNAB</title>
+  <meta name="description" content="Malla curricular interactiva de la carrera de Medicina de la Universidad de la República (UDELAR). Rastrea tu progreso académico de forma visual e intuitiva.">
+  <meta name="keywords" content="medicina, udelar, malla curricular, universidad, uruguay, progreso academico">
+  <meta name="author" content="Medicina UDELAR">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Malla Curricular - Medicina UDELAR">
+  <meta property="og:description" content="Rastrea tu progreso en la carrera de Medicina de la UDELAR">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Estilos adicionales para toasts y animaciones -->
+  <style>
+    /* Toast notifications */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      pointer-events: none;
+    }
+    
+    .toast {
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      max-width: 300px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.3s ease;
+      pointer-events: auto;
+    }
+    
+    .toast.toast-show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .toast-success { background: #28a745; }
+    .toast-error { background: #dc3545; }
+    .toast-warning { background: #ffc107; color: #333; }
+    .toast-info { background: #17a2b8; }
+    
+    /* Animaciones */
+    @keyframes materia-click {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+    
+    .materia-click {
+      animation: materia-click 0.3s ease;
+    }
+    
+    /* Loading animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(128, 0, 128, 0.3);
+      border-radius: 50%;
+      border-top-color: #800080;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scripts principales -->
+  <script type="module" src="js/app.js"></script>
+  
+  <!-- Service Worker para PWA (opcional para futuro) -->
+  <script>
+    // Detectar si es una instalación local o desarrollo
+    if ('serviceWorker' in navigator && location.protocol === 'https:') {
+      window.addEventListener('load', () => {
+        // navigator.serviceWorker.register('/sw.js'); // Uncomment when service worker is ready
+      });
+    }
+    
+    // Prevenir zoom en móviles al hacer doble tap
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+      const now = (new Date()).getTime();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+  </script>
+
+</body>
+</html>
