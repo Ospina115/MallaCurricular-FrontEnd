@@ -9,7 +9,7 @@
 
 Una aplicación web interactiva para visualizar y rastrear el progreso académico en la carrera de Derecho de la Universidad Autónoma de Bucaramanga (UNAB), Colombia.
 
-[🚀 Demo en Vivo](#) | [📖 Documentación](#documentación) | [🐛 Reportar Bug](../../issues)
+[🚀 Demo en Vivo](https://lawly.netlify.app) | [📖 Documentación](#documentación) | [🐛 Reportar Bug](../../issues)
 
 </div>
 
@@ -312,7 +312,6 @@ const config = {
 - **Estadísticas Detalladas**: Porcentajes y métricas de progreso
 
 ### 🔐 Sistema de Previas
-### 🔐 Sistema de Previas
 
 ```javascript
 // Ejemplo: Derecho Procesal Penal requiere Derecho Penal Especial
@@ -330,7 +329,7 @@ const config = {
 - **📘 Disponible**: Morado, clickeable con hover effects
 - **ℹ️ Tooltip**: Información detallada al pasar el mouse
 
-### 🔍 Información Detallada
+
 ### 🔍 Información Detallada
 
 Cada materia incluye:
@@ -401,7 +400,6 @@ Cada materia incluye:
 Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ```
-```
 MIT License
 
 Copyright (c) 2024 Derecho UNAB
@@ -428,7 +426,6 @@ SOFTWARE.
 
 ## 👥 Créditos
 
-### 🎓 Desarrollado para
 ### 🎓 Desarrollado para
 
 - **Universidad Autónoma de Bucaramanga (UNAB)**
@@ -502,5 +499,7 @@ Para consultas específicas sobre el proyecto:
 ---
 
 *Hecho con ❤️ para los estudiantes de Derecho de la UNAB*
+
+*Para LauritaFM 💜*
 
 </div>
