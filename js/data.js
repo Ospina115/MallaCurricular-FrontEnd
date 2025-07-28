@@ -1,5 +1,5 @@
 /**
- * Datos de la malla curricular de Medicina - UDELAR
+ * Datos de la malla curricular de Derecho
  * Contiene toda la información sobre materias, previas y estructura académica
  */
 
@@ -9,7 +9,6 @@
  * - id: identificador único
  * - nombre: nombre completo de la materia
  * - previas: array de IDs de materias que son prerequisito
- * - creditos: créditos académicos (opcional)
  * - tipo: tipo de materia (obligatoria, optativa, etc.)
  */
 export const materias = [
@@ -21,32 +20,22 @@ export const materias = [
         numero: "1º semestre",
         materias: [
           {
-            id: "bio_intro",
-            nombre: "Introducción a la Biología Celular y Molecular",
-            creditos: 8,
+            id: "expresion",
+            nombre: "Expresión",
             tipo: "obligatoria",
-            descripcion: "Fundamentos básicos de biología celular y molecular"
+            descripcion: "Desarrollo de habilidades de comunicación escrita y oral"
           },
           {
-            id: "bioest",
-            nombre: "Introducción a la Bioestadística",
-            creditos: 6,
+            id: "intro_derecho",
+            nombre: "Introducción al Derecho",
             tipo: "obligatoria",
-            descripcion: "Conceptos fundamentales de estadística aplicada a ciencias médicas"
+            descripcion: "Fundamentos básicos del derecho y sus principios"
           },
           {
-            id: "bioetica",
-            nombre: "Salud y Humanidades y Bioética",
-            creditos: 4,
+            id: "teoria_constitucional",
+            nombre: "Teoría Constitucional",
             tipo: "obligatoria",
-            descripcion: "Principios éticos y humanísticos en medicina"
-          },
-          {
-            id: "at1",
-            nombre: "Aprendizaje en Territorio 1",
-            creditos: 6,
-            tipo: "obligatoria",
-            descripcion: "Primera aproximación al trabajo en comunidad"
+            descripcion: "Fundamentos teóricos del derecho constitucional"
           }
         ]
       },
@@ -54,20 +43,31 @@ export const materias = [
         numero: "2º semestre",
         materias: [
           {
-            id: "bio",
-            nombre: "Biología Celular y Molecular",
-            previas: ["bio_intro"],
-            creditos: 12,
+            id: "identidad",
+            nombre: "Identidad",
+            previas: ["expresion"],
             tipo: "obligatoria",
-            descripcion: "Profundización en biología celular y molecular"
+            descripcion: "Desarrollo de la identidad profesional del jurista"
           },
           {
-            id: "at2",
-            nombre: "Aprendizaje en Territorio 2",
-            previas: ["at1"],
-            creditos: 6,
+            id: "logica_juridica",
+            nombre: "Lógica Jurídica",
             tipo: "obligatoria",
-            descripcion: "Continuación del trabajo territorial"
+            descripcion: "Principios de lógica aplicados al derecho"
+          },
+          {
+            id: "teoria_ddhh",
+            nombre: "Teoría de los Derechos Humanos",
+            previas: ["intro_derecho"],
+            tipo: "obligatoria",
+            descripcion: "Fundamentos teóricos de los derechos humanos"
+          },
+          {
+            id: "fundamentos_privado",
+            nombre: "Fundamentos del Derecho Privado",
+            previas: ["intro_derecho"],
+            tipo: "obligatoria",
+            descripcion: "Bases del derecho privado y civil"
           }
         ]
       }
@@ -81,20 +81,53 @@ export const materias = [
         numero: "3º semestre",
         materias: [
           {
-            id: "anatomia",
-            nombre: "Anatomía (CBCC2)",
-            previas: ["bioetica"],
-            creditos: 14,
+            id: "creatividad",
+            nombre: "Creatividad",
+            previas: ["identidad"],
             tipo: "obligatoria",
-            descripcion: "Estudio de la anatomía humana básica"
+            descripcion: "Desarrollo del pensamiento creativo en el ámbito jurídico"
           },
           {
-            id: "histobiof",
-            nombre: "Histología y Biofísica (CBCC2)",
-            previas: ["bio"],
-            creditos: 12,
+            id: "argumentacion_juridica",
+            nombre: "Argumentación Jurídica",
+            previas: ["logica_juridica"],
             tipo: "obligatoria",
-            descripcion: "Histología y principios biofísicos"
+            descripcion: "Técnicas de argumentación en el derecho"
+          },
+          {
+            id: "derecho_obligaciones",
+            nombre: "Derecho de las Obligaciones",
+            previas: ["fundamentos_privado"],
+            tipo: "obligatoria",
+            descripcion: "Estudio de las obligaciones en el derecho civil"
+          },
+          {
+            id: "derecho_familia",
+            nombre: "Derecho de Familia",
+            previas: ["fundamentos_privado"],
+            tipo: "obligatoria",
+            descripcion: "Regulación jurídica de las relaciones familiares"
+          },
+          {
+            id: "derecho_laboral_const",
+            nombre: "Derecho Laboral Constitucional",
+            previas: ["intro_derecho"],
+            tipo: "obligatoria",
+            descripcion: "Principios constitucionales del derecho laboral"
+          },
+          {
+            id: "derecho_penal_general1",
+            nombre: "Derecho Penal General I",
+            previas: ["intro_derecho"],
+            tipo: "obligatoria",
+            descripcion: "Teoría general del delito"
+          },
+          {
+            id: "derecho_constitucional_col1",
+            nombre: "Derecho Constitucional Colombiano I",
+            previas: ["teoria_constitucional"],
+            tipo: "obligatoria",
+            descripcion: "Estructura constitucional del Estado colombiano"
           }
         ]
       },
@@ -102,28 +135,45 @@ export const materias = [
         numero: "4º semestre",
         materias: [
           {
-            id: "histoneuro",
-            nombre: "Histología (Neuro y Cardio)",
-            previas: ["bio"],
-            creditos: 8,
+            id: "derecho_negocios_juridicos",
+            nombre: "Derecho de los Negocios Jurídicos",
+            previas: ["derecho_obligaciones"],
             tipo: "obligatoria",
-            descripcion: "Histología especializada en sistemas nervioso y cardiovascular"
+            descripcion: "Contratos y actos jurídicos patrimoniales"
           },
           {
-            id: "neuro",
-            nombre: "Neurociencias",
-            previas: ["bio"],
-            creditos: 10,
+            id: "derecho_titulos_valores",
+            nombre: "Derecho de los Títulos Valores",
+            previas: ["derecho_obligaciones"],
             tipo: "obligatoria",
-            descripcion: "Fundamentos de neurociencias"
+            descripcion: "Regulación de títulos valores y documentos comerciales"
           },
           {
-            id: "cardioresp",
-            nombre: "Cardiovascular y Respiratorio",
-            previas: ["bio"],
-            creditos: 10,
+            id: "derecho_penal_general2",
+            nombre: "Derecho Penal General II",
+            previas: ["derecho_penal_general1"],
             tipo: "obligatoria",
-            descripcion: "Sistemas cardiovascular y respiratorio"
+            descripcion: "Teoría de la pena y medidas de seguridad"
+          },
+          {
+            id: "derecho_constitucional_col2",
+            nombre: "Derecho Constitucional Colombiano II",
+            previas: ["derecho_constitucional_col1"],
+            tipo: "obligatoria",
+            descripcion: "Derechos fundamentales y garantías constitucionales"
+          },
+          {
+            id: "derecho_economico",
+            nombre: "Derecho Económico",
+            previas: ["derecho_constitucional_col1"],
+            tipo: "obligatoria",
+            descripcion: "Regulación jurídica de la actividad económica"
+          },
+          {
+            id: "relaciones_trabajo",
+            nombre: "Relaciones Individuales y Colectivas de Trabajo",
+            tipo: "obligatoria",
+            descripcion: "Derecho laboral individual y colectivo"
           }
         ]
       }
@@ -137,12 +187,44 @@ export const materias = [
         numero: "5º semestre",
         materias: [
           {
-            id: "cbcc5",
-            nombre: "Digestivo, Renal, Endocrino, Metabólico y Reproductor",
-            previas: ["bio", "anatomia"],
-            creditos: 16,
+            id: "derecho_responsabilidad",
+            nombre: "Derecho de la Responsabilidad",
+            previas: ["derecho_obligaciones"],
             tipo: "obligatoria",
-            descripcion: "Sistemas digestivo, renal, endocrino y reproductor"
+            descripcion: "Responsabilidad civil contractual y extracontractual"
+          },
+          {
+            id: "derecho_seguridad_social",
+            nombre: "Derecho de la Seguridad Social",
+            previas: ["derecho_laboral_const"],
+            tipo: "obligatoria",
+            descripcion: "Sistema de seguridad social y protección social"
+          },
+          {
+            id: "derecho_penal_especial",
+            nombre: "Derecho Penal Especial",
+            previas: ["derecho_penal_general2"],
+            tipo: "obligatoria",
+            descripcion: "Delitos en particular y tipos penales específicos"
+          },
+          {
+            id: "derecho_administrativo_general",
+            nombre: "Derecho Administrativo General",
+            previas: ["derecho_constitucional_col2"],
+            tipo: "obligatoria",
+            descripcion: "Principios generales del derecho administrativo"
+          },
+          {
+            id: "teoria_general_proceso",
+            nombre: "Teoría General del Proceso",
+            tipo: "obligatoria",
+            descripcion: "Fundamentos teóricos del derecho procesal"
+          },
+          {
+            id: "seminario_hermeneutica",
+            nombre: "Seminario de Hermenéutica Jurídica",
+            tipo: "obligatoria",
+            descripcion: "Interpretación y hermenéutica jurídica"
           }
         ]
       },
@@ -150,20 +232,52 @@ export const materias = [
         numero: "6º semestre",
         materias: [
           {
-            id: "b6",
-            nombre: "Hematología e Inmunobiología",
-            previas: ["bio"],
-            creditos: 10,
+            id: "derecho_societario",
+            nombre: "Derecho Societario",
+            previas: ["derecho_negocios_juridicos"],
             tipo: "obligatoria",
-            descripcion: "Sistema hematológico e inmunológico"
+            descripcion: "Derecho de sociedades comerciales"
           },
           {
-            id: "met1",
-            nombre: "Metodología Científica 1",
-            previas: ["bioest", "cbcc5"],
-            creditos: 6,
+            id: "derecho_procesal_penal",
+            nombre: "Derecho Procesal Penal",
+            previas: ["derecho_penal_especial"],
             tipo: "obligatoria",
-            descripcion: "Introducción a la metodología de investigación"
+            descripcion: "Procedimiento penal y proceso acusatorio"
+          },
+          {
+            id: "derecho_administrativo_especial",
+            nombre: "Derecho Administrativo Especial",
+            previas: ["derecho_administrativo_general"],
+            tipo: "obligatoria",
+            descripcion: "Ramas especiales del derecho administrativo"
+          },
+          {
+            id: "derecho_procesal_civil_general",
+            nombre: "Derecho Procesal Civil General",
+            previas: ["teoria_general_proceso"],
+            tipo: "obligatoria",
+            descripcion: "Procedimiento civil general"
+          },
+          {
+            id: "derecho_procesal_laboral",
+            nombre: "Derecho Procesal Laboral",
+            previas: ["relaciones_trabajo"],
+            tipo: "obligatoria",
+            descripcion: "Procedimiento en materia laboral"
+          },
+          {
+            id: "seminario_analisis_jurisprudencial",
+            nombre: "Seminario de Análisis Jurisprudencial",
+            previas: ["seminario_hermeneutica"],
+            tipo: "obligatoria",
+            descripcion: "Análisis de jurisprudencia y precedente judicial"
+          },
+          {
+            id: "teoria_general_prueba",
+            nombre: "Teoría General de la Prueba",
+            tipo: "obligatoria",
+            descripcion: "Principios generales del derecho probatorio"
           }
         ]
       }
@@ -177,20 +291,52 @@ export const materias = [
         numero: "7º semestre",
         materias: [
           {
-            id: "m4pna",
-            nombre: "Medicina en el Primer Nivel de Atención",
-            previas: ["cbcc5", "b6", "met1"],
-            creditos: 12,
+            id: "derecho_probatorio_especial",
+            nombre: "Derecho Probatorio Especial",
+            previas: ["derecho_procesal_penal", "derecho_procesal_laboral", "teoria_general_prueba"],
             tipo: "obligatoria",
-            descripcion: "Medicina en atención primaria"
+            descripcion: "Pruebas especiales en diferentes jurisdicciones"
           },
           {
-            id: "m4bcp",
-            nombre: "Bases Científicas de la Patología",
-            previas: ["cbcc5", "b6", "met1"],
-            creditos: 12,
+            id: "procedimiento_admin_contencioso",
+            nombre: "Procedimiento Administrativo y Contencioso Administrativo",
+            previas: ["derecho_administrativo_especial"],
             tipo: "obligatoria",
-            descripcion: "Fundamentos científicos de la patología"
+            descripcion: "Procedimientos administrativos y contenciosos"
+          },
+          {
+            id: "derecho_procesal_civil_especial",
+            nombre: "Derecho Procesal Civil Especial",
+            previas: ["derecho_procesal_civil_general"],
+            tipo: "obligatoria",
+            descripcion: "Procedimientos civiles especiales"
+          },
+          {
+            id: "derecho_tributario2",
+            nombre: "Derecho Tributario II",
+            previas: ["derecho_economico"],
+            tipo: "obligatoria",
+            descripcion: "Tributación especial y procedimientos tributarios"
+          },
+          {
+            id: "seminario_institutos_juridicos",
+            nombre: "Seminario de Institutos Jurídicos",
+            previas: ["seminario_analisis_jurisprudencial"],
+            tipo: "obligatoria",
+            descripcion: "Estudio de institutos jurídicos fundamentales"
+          },
+          {
+            id: "consultorio_juridico1",
+            nombre: "Consultorio Jurídico I",
+            previas: ["teoria_general_prueba"],
+            tipo: "obligatoria",
+            descripcion: "Práctica jurídica inicial"
+          },
+          {
+            id: "curso_conciliacion",
+            nombre: "Curso de Conciliación",
+            tipo: "obligatoria",
+            descripcion: "Métodos alternativos de resolución de conflictos"
           }
         ]
       },
@@ -198,20 +344,45 @@ export const materias = [
         numero: "8º semestre",
         materias: [
           {
-            id: "pediatria",
-            nombre: "Pediatría",
-            previas: ["cbcc5", "b6", "met1"],
-            creditos: 12,
+            id: "derecho_funcion_publica",
+            nombre: "Derecho de la Función Pública",
+            previas: ["procedimiento_admin_contencioso", "relaciones_trabajo", "derecho_responsabilidad", "derecho_constitucional_col2"],
             tipo: "obligatoria",
-            descripcion: "Medicina pediátrica"
+            descripcion: "Régimen jurídico de los servidores públicos"
           },
           {
-            id: "gineco",
-            nombre: "Ginecología y Neonatología",
-            previas: ["cbcc5", "b6", "met1"],
-            creditos: 12,
+            id: "derecho_internacional_publico",
+            nombre: "Derecho Internacional Público",
+            previas: ["derecho_constitucional_col2"],
             tipo: "obligatoria",
-            descripcion: "Ginecología y cuidados neonatales"
+            descripcion: "Derecho de las relaciones internacionales"
+          },
+          {
+            id: "consultorio_juridico2",
+            nombre: "Consultorio Jurídico II",
+            previas: ["derecho_procesal_civil_especial", "derecho_probatorio_especial", "procedimiento_admin_contencioso"],
+            tipo: "obligatoria",
+            descripcion: "Práctica jurídica intermedia"
+          },
+          {
+            id: "seminario_escuelas_juridicas",
+            nombre: "Seminario de Escuelas Jurídicas",
+            previas: ["seminario_institutos_juridicos"],
+            tipo: "obligatoria",
+            descripcion: "Estudio de las principales escuelas del pensamiento jurídico"
+          },
+          {
+            id: "mecanismos_alternativos",
+            nombre: "Mecanismos Alternativos de Solución de Conflictos",
+            previas: ["teoria_general_proceso"],
+            tipo: "obligatoria",
+            descripcion: "Arbitraje, mediación y otros MASC"
+          },
+          {
+            id: "emprendimiento_juridico1",
+            nombre: "Emprendimiento Jurídico Ciclo I",
+            tipo: "obligatoria",
+            descripcion: "Emprendimiento e innovación en el sector jurídico"
           }
         ]
       }
@@ -222,85 +393,61 @@ export const materias = [
     color: "#feca57",
     semestres: [
       {
-        numero: "9º y 10º semestre",
+        numero: "9º semestre",
         materias: [
           {
-            id: "clinica",
-            nombre: "Clínica Médica",
-            previas: ["m4pna", "m4bcp"],
-            creditos: 20,
-            tipo: "obligatoria",
-            descripcion: "Práctica clínica médica"
+            id: "electiva_socio_humanistica1",
+            nombre: "Electiva Socio Humanística I",
+            previas: ["creatividad"],
+            tipo: "electiva",
+            descripcion: "Materia electiva del área socio-humanística"
           },
           {
-            id: "patomed",
-            nombre: "Patología Médica y Terapéutica",
-            previas: ["m4bcp"],
-            creditos: 18,
+            id: "consultorio_juridico3",
+            nombre: "Consultorio Jurídico III",
+            previas: ["derecho_procesal_civil_especial", "curso_conciliacion"],
             tipo: "obligatoria",
-            descripcion: "Patología médica y tratamientos"
+            descripcion: "Práctica jurídica avanzada"
+          },
+          {
+            id: "seminario_metodologia_investigacion",
+            nombre: "Seminario de Metodología de la Investigación Jurídica",
+            previas: ["seminario_escuelas_juridicas"],
+            tipo: "obligatoria",
+            descripcion: "Metodología para la investigación en derecho"
+          },
+          {
+            id: "emprendimiento_juridico2",
+            nombre: "Emprendimiento Jurídico Ciclo II",
+            previas: ["emprendimiento_juridico1"],
+            tipo: "obligatoria",
+            descripcion: "Desarrollo de proyectos jurídicos emprendedores"
           }
         ]
-      }
-    ]
-  },
-  {
-    anio: "Sexto",
-    color: "#ff9ff3",
-    semestres: [
+      },
       {
-        numero: "11º y 12º semestre",
+        numero: "10º semestre",
         materias: [
           {
-            id: "clinicaq",
-            nombre: "Clínica Quirúrgica",
-            previas: ["m4pna", "m4bcp"],
-            creditos: 18,
-            tipo: "obligatoria",
-            descripcion: "Práctica clínica quirúrgica"
+            id: "electiva_socio_humanistica2",
+            nombre: "Electiva Socio Humanística II",
+            previas: ["electiva_socio_humanistica1"],
+            tipo: "electiva",
+            descripcion: "Segunda materia electiva del área socio-humanística"
           },
           {
-            id: "patoquir",
-            nombre: "Patología Quirúrgica",
-            previas: ["m4bcp"],
-            creditos: 16,
+            id: "seminario_proyecto_investigacion",
+            nombre: "Seminario de Proyecto de Investigación",
+            previas: ["seminario_metodologia_investigacion"],
             tipo: "obligatoria",
-            descripcion: "Patología quirúrgica"
+            descripcion: "Desarrollo de proyecto de grado o investigación"
           },
           {
-            id: "mfc",
-            nombre: "MFC – Salud Mental en Comunidad – Psicología Médica",
-            previas: ["m4pna"],
-            creditos: 12,
+            id: "consultorio_juridico4",
+            nombre: "Consultorio Jurídico IV",
+            previas: ["emprendimiento_juridico1", "emprendimiento_juridico2"],
             tipo: "obligatoria",
-            descripcion: "Medicina familiar y comunitaria, salud mental"
-          },
-          {
-            id: "met2",
-            nombre: "Metodología Científica 2",
-            previas: ["m4pna", "m4bcp"],
-            creditos: 8,
-            tipo: "obligatoria",
-            descripcion: "Metodología de investigación avanzada"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    anio: "Séptimo",
-    color: "#f0932b",
-    semestres: [
-      {
-        numero: "13º y 14º semestre",
-        materias: [
-          {
-            id: "internado",
-            nombre: "Internado Obligatorio",
-            previas: ["clinica", "patomed", "clinicaq", "patoquir", "mfc", "met2"],
-            creditos: 30,
-            tipo: "obligatoria",
-            descripcion: "Internado rotatorio obligatorio"
+            descripcion: "Práctica jurídica final y trabajo de grado"
           }
         ]
       }
@@ -313,7 +460,7 @@ export const materias = [
  */
 export const config = {
   // Clave para localStorage
-  STORAGE_KEY: "estadoMaterias_medicina_udelar",
+  STORAGE_KEY: "estadoMaterias_derecho",
   
   // Versión de los datos (para migraciones futuras)
   DATA_VERSION: "1.0.0",
@@ -352,16 +499,6 @@ export function getAllMaterias() {
   });
   
   return todasLasMaterias;
-}
-
-/**
- * Calcula el total de créditos de la carrera
- * @returns {number} Total de créditos
- */
-export function getTotalCreditos() {
-  return getAllMaterias().reduce((total, materia) => {
-    return total + (materia.creditos || 0);
-  }, 0);
 }
 
 /**

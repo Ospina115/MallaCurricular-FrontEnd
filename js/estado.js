@@ -149,25 +149,12 @@ export class EstadoManager {
     const completadas = todasLasMaterias.filter(materia => 
       this.isMateriaCompletada(materia.id)
     ).length;
-    
-    const creditosTotal = todasLasMaterias.reduce((sum, materia) => 
-      sum + (materia.creditos || 0), 0
-    );
-    
-    const creditosCompletados = todasLasMaterias
-      .filter(materia => this.isMateriaCompletada(materia.id))
-      .reduce((sum, materia) => sum + (materia.creditos || 0), 0);
 
     return {
       total,
       completadas,
       pendientes: total - completadas,
-      porcentaje: total > 0 ? Math.round((completadas / total) * 100) : 0,
-      creditosTotal,
-      creditosCompletados,
-      creditosPendientes: creditosTotal - creditosCompletados,
-      porcentajeCreditos: creditosTotal > 0 ? 
-        Math.round((creditosCompletados / creditosTotal) * 100) : 0
+      porcentaje: total > 0 ? Math.round((completadas / total) * 100) : 0
     };
   }
 }

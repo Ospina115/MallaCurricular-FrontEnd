@@ -1,9 +1,9 @@
 /**
  * Aplicación principal de la Malla Curricular Interactiva
- * Medicina - UDELAR
+ * Derecho
  */
 
-import { materias, getAllMaterias, getTotalCreditos, getMateriaById } from './data.js';
+import { materias, getAllMaterias, getMateriaById } from './data.js';
 import { EstadoManager } from './estado.js';
 import { 
   puedeSerCursada, 
@@ -23,7 +23,6 @@ class MallaCurricular {
   constructor() {
     this.estadoManager = new EstadoManager();
     this.todasLasMaterias = getAllMaterias();
-    this.totalCreditos = getTotalCreditos();
     
     this.init();
   }
@@ -43,9 +42,8 @@ class MallaCurricular {
       this.actualizarProgreso();
     });
     
-    console.log('🎓 Malla Curricular Medicina UDELAR iniciada');
+    console.log('⚖️ Malla Curricular Derecho iniciada');
     console.log(`📚 Total de materias: ${this.todasLasMaterias.length}`);
-    console.log(`🏆 Total de créditos: ${this.totalCreditos}`);
   }
 
   /**
@@ -53,8 +51,8 @@ class MallaCurricular {
    */
   crearInterfaz() {
     const header = crearElemento('div', { className: 'header' }, `
-      <h1>🏥 Malla Curricular - Medicina UDELAR</h1>
-      <p class="subtitle">Universidad de la República - Facultad de Medicina</p>
+      <h1>⚖️ Malla Curricular - Derecho</h1>
+      <p class="subtitle">Carrera de Derecho - Programa Académico</p>
     `);
 
     const controls = crearElemento('div', { className: 'controls' }, `
@@ -110,7 +108,7 @@ class MallaCurricular {
     document.getElementById('exportBtn').addEventListener('click', () => {
       const datos = this.estadoManager.exportarEstado();
       const fecha = new Date().toISOString().split('T')[0];
-      descargarJSON(datos, `malla-medicina-${fecha}.json`);
+      descargarJSON(datos, `malla-derecho-${fecha}.json`);
       mostrarToast('Datos exportados correctamente', 'success');
     });
 
@@ -242,7 +240,6 @@ class MallaCurricular {
     // Contenido principal
     const contenidoPrincipal = crearElemento('div', {}, `
       <strong>${materia.nombre}</strong>
-      ${materia.creditos ? `<br><small>📚 ${materia.creditos} créditos</small>` : ''}
     `);
     divMateria.appendChild(contenidoPrincipal);
 
@@ -281,10 +278,6 @@ class MallaCurricular {
     
     if (materia.descripcion) {
       contenido += `${materia.descripcion}<br>`;
-    }
-    
-    if (materia.creditos) {
-      contenido += `📚 ${materia.creditos} créditos<br>`;
     }
     
     if (completada) {
@@ -346,10 +339,6 @@ class MallaCurricular {
         <div class="stat-label">Materias Pendientes</div>
       </div>
       <div class="stat-item">
-        <span class="stat-number">${stats.creditosCompletados}</span>
-        <div class="stat-label">Créditos Obtenidos</div>
-      </div>
-      <div class="stat-item">
         <span class="stat-number">${stats.porcentaje}%</span>
         <div class="stat-label">Progreso Total</div>
       </div>
@@ -373,7 +362,7 @@ class MallaCurricular {
    */
   mostrarAyuda() {
     const mensaje = `
-      <h3>🎓 Ayuda - Malla Curricular Medicina UDELAR</h3>
+      <h3>⚖️ Ayuda - Malla Curricular Derecho</h3>
       <br>
       <strong>Cómo usar:</strong><br>
       • Haz clic en una materia para marcarla como completada<br>
