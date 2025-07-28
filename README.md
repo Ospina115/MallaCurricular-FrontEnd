@@ -1,13 +1,13 @@
-# 🏥 Malla Curricular Interactiva - Medicina UDELAR
+# ⚖️ Malla Curricular Interactiva - Derecho UNAB
 
 <div align="center">
 
-![Medicina UDELAR](https://img.shields.io/badge/Medicina-UDELAR-800080?style=for-the-badge&logo=graduation-cap)
+![Derecho UNAB](https://img.shields.io/badge/Derecho-UNAB-800080?style=for-the-badge&logo=balance-scale)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-Una aplicación web interactiva para visualizar y rastrear el progreso académico en la carrera de Medicina de la Universidad de la República (UDELAR), Uruguay.
+Una aplicación web interactiva para visualizar y rastrear el progreso académico en la carrera de Derecho de la Universidad Autónoma de Bucaramanga (UNAB), Colombia.
 
 [🚀 Demo en Vivo](#) | [📖 Documentación](#documentación) | [🐛 Reportar Bug](../../issues)
 
@@ -39,7 +39,7 @@ Una aplicación web interactiva para visualizar y rastrear el progreso académic
 - **📊 Visualización Interactiva**: Malla curricular completa organizada por años y semestres
 - **✅ Seguimiento de Progreso**: Marca materias como completadas con un simple clic
 - **🔐 Sistema de Previas**: Bloqueo automático de materias que requieren prerequisitos
-- **📈 Estadísticas en Tiempo Real**: Progreso visual con porcentajes y créditos
+- **📈 Estadísticas en Tiempo Real**: Progreso visual con porcentajes de avance
 - **💾 Persistencia Local**: Tu progreso se guarda automáticamente en el navegador
 - **📤 Exportar/Importar**: Backup y sincronización de datos entre dispositivos
 - **🎨 Interfaz Moderna**: Diseño atractivo con gradientes y animaciones suaves
@@ -61,10 +61,10 @@ Una aplicación web interactiva para visualizar y rastrear el progreso académic
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/PriscillaNoble24/Malla-Fmed-Interactiva.git
+git clone https://github.com/Ospina115/MallaCurricular-FrontEnd.git
 
 # Navegar al directorio
-cd Malla-Fmed-Interactiva
+cd MallaCurricular-FrontEnd
 
 # Abrir en navegador (opción 1: servidor local)
 python -m http.server 8000
@@ -81,13 +81,13 @@ python -m http.server 8000
 ## 📁 Estructura del Proyecto
 
 ```
-Malla-Fmed-Interactiva/
+MallaCurricular-FrontEnd/
 ├── 📄 index.html              # Página principal
 ├── 📁 css/
 │   └── 🎨 styles.css          # Estilos principales
 ├── 📁 js/
 │   ├── 🧠 app.js              # Aplicación principal
-│   ├── 📊 data.js             # Datos de la malla curricular
+│   ├── 📊 data.js             # Datos de la malla curricular de Derecho
 │   ├── 💾 estado.js           # Gestión de estado y localStorage
 │   └── 🛠️ utils.js           # Utilidades y funciones helper
 ├── 📖 README.md               # Documentación (este archivo)
@@ -101,7 +101,7 @@ Malla-Fmed-Interactiva/
 | `index.html` | Página principal | Estructura HTML base, metadatos SEO |
 | `css/styles.css` | Estilos principales | Diseño responsive, animaciones, tema visual |
 | `js/app.js` | Aplicación principal | Lógica de UI, eventos, renderizado |
-| `js/data.js` | Datos de la malla | Estructura de materias, créditos, previas |
+| `js/data.js` | Datos de la malla | Estructura de materias, prerequisitos, semestres |
 | `js/estado.js` | Gestión de estado | localStorage, persistencia, observadores |
 | `js/utils.js` | Utilidades | Funciones helper, validaciones, formateo |
 
@@ -132,7 +132,7 @@ Malla-Fmed-Interactiva/
 
 1. **Descargar el proyecto**:
    ```bash
-   git clone https://github.com/PriscillaNoble24/Malla-Fmed-Interactiva.git
+   git clone https://github.com/Ospina115/MallaCurricular-FrontEnd.git
    ```
 
 2. **Abrir en navegador**:
@@ -273,11 +273,11 @@ La aplicación utiliza `localStorage` para guardar tu progreso automáticamente:
   "version": "1.0.0",
   "timestamp": 1640995200000,
   "materias": {
-    "bio_intro": {
+    "expresion": {
       "completada": true,
       "fecha": "2024-01-15T10:30:00.000Z"
     },
-    "bioest": {
+    "intro_derecho": {
       "completada": true,
       "fecha": "2024-01-20T14:45:00.000Z"
     }
@@ -298,7 +298,7 @@ El sistema incluye versionado para futuras migraciones:
 
 ```javascript
 const config = {
-  STORAGE_KEY: "estadoMaterias_medicina_udelar",
+  STORAGE_KEY: "estadoMaterias_derecho",
   DATA_VERSION: "1.0.0"
 };
 ```
@@ -310,22 +310,21 @@ const config = {
 ### 📊 Sistema de Progreso
 
 - **Contador de Materias**: Completadas vs. Pendientes
-- **Sistema de Créditos**: Seguimiento de créditos académicos
 - **Barra de Progreso**: Visualización del avance total
-- **Estadísticas Detalladas**: Porcentajes y métricas
+- **Estadísticas Detalladas**: Porcentajes y métricas de progreso
 
+### 🔐 Sistema de Previas
 ### 🔐 Sistema de Previas
 
 ```javascript
-// Ejemplo: Anatomía requiere Bioética
+// Ejemplo: Derecho Procesal Penal requiere Derecho Penal Especial
 {
-  id: "anatomia",
-  nombre: "Anatomía (CBCC2)",
-  previas: ["bioetica"],
-  creditos: 14
+  id: "derecho_procesal_penal",
+  nombre: "Derecho Procesal Penal",
+  previas: ["derecho_penal_especial"],
+  tipo: "obligatoria"
 }
 ```
-
 ### 🎨 Estados Visuales
 
 - **✅ Completada**: Verde con ✓, texto tachado
@@ -334,14 +333,14 @@ const config = {
 - **ℹ️ Tooltip**: Información detallada al pasar el mouse
 
 ### 🔍 Información Detallada
+### 🔍 Información Detallada
 
 Cada materia incluye:
 - **Nombre completo**
-- **Créditos académicos**
 - **Materias previas requeridas**
+- **Tipo** (obligatoria/electiva)
 - **Descripción**
 - **Fecha de completado** (si aplica)
-
 ---
 
 ## 🤝 Contribuir
@@ -369,10 +368,10 @@ Cada materia incluye:
 
 1. **Fork** el repositorio
 2. **Clona** tu fork:
+2. **Clona** tu fork:
    ```bash
-   git clone https://github.com/tu-usuario/Malla-Fmed-Interactiva.git
-   ```
-3. **Crea** una rama para tu feature:
+   git clone https://github.com/tu-usuario/MallaCurricular-FrontEnd.git
+   ```rea** una rama para tu feature:
    ```bash
    git checkout -b feature/nueva-funcionalidad
    ```
@@ -404,12 +403,12 @@ Cada materia incluye:
 Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ```
+```
 MIT License
 
-Copyright (c) 2024 Medicina UDELAR
+Copyright (c) 2024 Derecho UNAB
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
+Permission is hereby granted, free of charge, to any person obtaining a copyl
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -432,14 +431,15 @@ SOFTWARE.
 ## 👥 Créditos
 
 ### 🎓 Desarrollado para
+### 🎓 Desarrollado para
 
-- **Universidad de la República (UDELAR)**
-- **Facultad de Medicina**
-- **Estudiantes de Medicina de Uruguay**
+- **Universidad Autónoma de Bucaramanga (UNAB)**
+- **Facultad de Derecho**
+- **Estudiantes de Derecho de Colombia**
 
 ### 💝 Agradecimientos
 
-- **UDELAR** por la información de la malla curricular
+- **UNAB** por la información de la malla curricular
 - **Comunidad de estudiantes** por feedback y sugerencias
 - **Contribuidores** que han mejorado el proyecto
 
@@ -447,17 +447,16 @@ SOFTWARE.
 
 - **Iconos**: Emojis nativos del sistema
 - **Fuentes**: System fonts para mejor rendimiento
-- **Colores**: Paleta oficial de UDELAR
-- **Inspiración**: Necesidad real de estudiantes de medicina
-
+- **Colores**: Paleta institucional universitaria
+- **Inspiración**: Necesidad real de estudiantes de derecho
 ---
 
 ## 📞 Contacto y Soporte
 
 ### 🔗 Enlaces Importantes
 
-- **🏠 Página Principal**: [Medicina UDELAR](https://www.fmed.edu.uy/)
-- **📚 Plan de Estudios**: [Plan Oficial](https://www.fmed.edu.uy/estudiar/grado/doctor-en-medicina)
+- **🏠 Página Principal**: [UNAB](https://www.unab.edu.co/)
+- **📚 Facultad de Derecho**: [Programa de Derecho UNAB](https://www.unab.edu.co/programa/derecho)
 - **💬 Discusiones**: [GitHub Discussions](../../discussions)
 - **🐛 Issues**: [Reportar Problemas](../../issues)
 
@@ -500,10 +499,10 @@ Para consultas específicas sobre el proyecto:
 
 **⭐ Si este proyecto te es útil, dale una estrella en GitHub ⭐**
 
-**🎓 ¡Éxitos en tu carrera de Medicina! 🎓**
+**⚖️ ¡Éxitos en tu carrera de Derecho! ⚖️**
 
 ---
 
-*Hecho con ❤️ para los estudiantes de Medicina de la UDELAR*
+*Hecho con ❤️ para los estudiantes de Derecho de la UNAB*
 
 </div>
