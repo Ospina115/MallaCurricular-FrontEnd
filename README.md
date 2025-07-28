@@ -110,13 +110,11 @@ MallaCurricular-FrontEnd/
 ## 🎨 Capturas de Pantalla
 
 ### 🖥️ Vista Desktop
-![Vista Desktop](https://via.placeholder.com/800x400/800080/FFFFFF?text=Vista+Desktop)
+![Vista Desktop](/images/previewlaptop.png)
 
 ### 📱 Vista Mobile
-![Vista Mobile](https://via.placeholder.com/300x600/800080/FFFFFF?text=Vista+Mobile)
+![Vista Mobile](/images/previewmovile.png)
 
-### 📊 Estadísticas y Progreso
-![Estadísticas](https://via.placeholder.com/600x300/800080/FFFFFF?text=Estadísticas+y+Progreso)
 
 ---
 

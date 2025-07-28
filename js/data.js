@@ -13,7 +13,7 @@
  */
 export const materias = [
   {
-    anio: "Primero",
+    anio: "Primer",
     color: "#ff6b6b",
     semestres: [
       {
@@ -180,7 +180,7 @@ export const materias = [
     ]
   },
   {
-    anio: "Tercero",
+    anio: "Tercer",
     color: "#45b7d1",
     semestres: [
       {
